@@ -1,0 +1,28 @@
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+
+  &__content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  &__link {
+    color: var(--color-accent);
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

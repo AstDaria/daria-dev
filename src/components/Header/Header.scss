@@ -1,0 +1,44 @@
+.header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__badge {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  &__button {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &--ghost {
+      background-color: transparent;
+      color: var(--text-color);
+
+      &:hover {
+        background-color: var(--hover-bg);
+      }
+    }
+  }
+}
