@@ -61,18 +61,109 @@
   }
 
   &__focus {
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 20px;
-    align-self: stretch;
+    &-title {
+      font-size: 5.5rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
+      line-height: 1.1;
+      background: linear-gradient(
+        90deg,
+        #8e2de2,
+        #3b82f6,
+        #fcd34d,
+        #3b82f6,
+        #8e2de2
+      );
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: hero-title-gradient 8s ease infinite;
+    }
+
+    @keyframes hero-title-gradient {
+      0% {
+        background-position: 200% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    &-list {
+      display: grid;
+      gap: 150px;
+      margin-top: 150px;
+    }
+
+    &-item {
+      position: relative;
+      padding: 50px;
+      border-radius: 20px;
+      background: #1a1a1a;
+      color: #fff;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -75px;
+        left: 50%;
+        width: 120px;
+        height: 2px;
+        background: linear-gradient(90deg, #8e2de2, #fcd34d, #3b82f6);
+        transform: translate(-50%, -50%) rotate(90deg);
+        border-radius: 2px;
+        opacity: 0.8;
+      }
+
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   inset: 0;
+      //   padding: 2px;
+      //   border-radius: inherit;
+      //   background: linear-gradient(90deg, #8e2de2, #fcd34d, #3b82f6);
+      //   -webkit-mask:
+      //     linear-gradient(#fff 0 0) content-box,
+      //     linear-gradient(#fff 0 0);
+      //   -webkit-mask-composite: xor;
+      //   mask-composite: exclude;
+      //   z-index: -1;
+      // }
+
+      &-title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        text-align: center;
+        line-height: 1.5em;
+        margin-top: 0;
+      }
+    }
+
+    &-text {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    &-label {
+      color: #fcd34d;
+      font-weight: 600;
+      margin-right: 0.25rem;
+    }
   }
 
-  &__focus-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  &__focus-text {
-    line-height: 1.5;
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
