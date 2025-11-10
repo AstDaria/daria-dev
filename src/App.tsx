@@ -5,6 +5,7 @@ import TechStack from "./components/TechStack/TechStack";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import SiteFooter from "./components/Footer/Footer";
+import Focus from "./components/Focus/Focus";
 
 export default function App() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
@@ -14,6 +15,7 @@ export default function App() {
       <Header theme={theme} onToggleTheme={toggle} />
       <main>
         <Hero />
+        <Focus />
         <TechStack />
         <Projects />
         <Contact />
