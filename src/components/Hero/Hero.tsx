@@ -4,7 +4,10 @@ export default function Hero() {
   return (
     <section className="hero" aria-label="Intro">
       <div className="hero__content">
-        <h1 className="hero__title">Hi, I’m Daria — Frontend Developer</h1>
+        <h1 className="hero__title">
+          Hi, I’m Daria —{" "}
+          <span className="gradient-text">Frontend Developer</span>
+        </h1>
         <p className="hero__text">
           Frontend developer with 12+ years of experience building performant,
           responsive, and pixel-perfect websites. Skilled in creating reusable
@@ -46,15 +49,6 @@ export default function Hero() {
           <span className="hero__skill">Bitrix24</span>
           <span className="hero__skill">Bootstrap</span>
           <span className="hero__skill">Vercel</span>
-        </div>
-
-        <div className="hero__actions">
-          <a className="hero__button hero__button--primary" href="#contact">
-            Contact
-          </a>
-          <a className="hero__button" href="#projects">
-            Projects
-          </a>
         </div>
       </div>
     </section>

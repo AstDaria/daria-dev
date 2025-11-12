@@ -26,7 +26,7 @@ const Focus = () => {
   }, []);
 
   return (
-    <section className="focus" id="focus">
+    <section className="focus" id="achivements">
       <div className="focus__container">
         <h2 className="focus__title">Key Achievements</h2>
 

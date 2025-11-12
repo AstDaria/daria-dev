@@ -1,11 +1,12 @@
 .header {
-  padding: 20px;
-  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  background: transparent;
+  color: inherit;
 
   &__row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   &__logo {
@@ -16,29 +17,75 @@
   &__controls {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: flex-end;
+    gap: 1rem;
   }
 
-  &__badge {
-    font-size: 0.9rem;
-    opacity: 0.8;
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  &__link {
+    font-weight: 600;
+    position: relative;
+    transition: all 200ms ease-in-out;
+    text-wrap: nowrap;
+    color: white;
+    background: linear-gradient(90deg, #8e2de2, #fcd34d, #3b82f6) no-repeat
+      right bottom / 0 var(--bg-h);
+    transition: background-size 350ms;
+    padding-bottom: 2px;
+    --bg-h: 1px;
+
+    &:where(:hover) {
+      background-size: 100% var(--bg-h);
+      background-position-x: left;
+    }
+    @at-root .light-theme & {
+      background: linear-gradient(90deg, #8e2de2, #fcd34d, #3b82f6) no-repeat
+        right bottom / 0 var(--bg-h);
+
+      &:where(:hover) {
+        background-size: 100% var(--bg-h);
+        background-position-x: left;
+      }
+    }
   }
 
   &__button {
     background: none;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 6px 12px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
     cursor: pointer;
-    transition: background 0.2s;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
 
-    &--ghost {
-      background-color: transparent;
-      color: var(--text-color);
-
-      &:hover {
-        background-color: var(--hover-bg);
-      }
+    &--ghost:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+    path {
+      fill: #fff;
+    }
+    &:hover {
+      transform: rotate(10deg) scale(1.05);
     }
   }
 }
