@@ -11,7 +11,7 @@ export default function Hero() {
 
           <h1 className="hero__title">
             Hi, I’m Daria —{" "} <br />
-            <span className="hero__title-accent">Frontend Developer</span>
+            <span className="gradient-text">Frontend Developer</span>
           </h1>
 
           <p className="hero__text">
@@ -24,15 +24,25 @@ export default function Hero() {
         <div className="hero__visual" aria-hidden="true">
           <div className="hero-visual">
             <div className="hero-visual__badge">Currently at Codemagic</div>
-<div className="star"></div>
+            <a href="https://codemagic.io/start/" target="_blank" rel="noopener noreferrer">
+              <img className="hero__image"src="/hero-cm.png" alt="" />
+            </a>
             <div className="hero-visual__chips">
               <span className="hero-visual__chip">Design systems</span>
               <span className="hero-visual__chip">Reusable UI</span>
               <span className="hero-visual__chip">Smooth DX</span>
-            </div>
+              <span className="hero-visual__chip">CI/CD</span>
+              <span className="hero-visual__chip">A/B testing</span>
+              <span className="hero-visual__chip">Performance</span>
+              <span className="hero-visual__chip">Accessibility</span>
+              <span className="hero-visual__chip">Scalability</span>
           </div>
+           
+          </div>
+          <div className="star"></div>
+         
         </div>
-      </div>
+</div>
     </section>
   );
 }

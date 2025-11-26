@@ -1,9 +1,12 @@
 .star {
-  position: relative;
-  font-size: 1rem;
-  width: 1em;
-  height: 1em;
+  position: absolute;
+  font-size: 1.5rem;
+  width: 160px;
+  height: 160px;
   display: inline-block;
+  top: -80px;
+  right: -60px;
+  z-index: 0;
 }
 
 .star::after,
@@ -11,7 +14,7 @@
   content: "\2726";
   position: absolute;
   inset: 0;
-  font-size: 1em;
+  font-size: 8em;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -22,7 +25,9 @@
 }
 
 .star::after {
-  background: linear-gradient(135deg, white, #8da79a);
+  // background: linear-gradient(135deg, white, #8da79a);
+  background: linear-gradient(135deg, white, #fcd34d);
+  // background: linear-gradient(135deg, white, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -39,7 +39,7 @@ export default function Skills() {
     <section className="skills" aria-label="Skills">
       <div className="skills__container">
         <h2 className="skills__title">Skills & Tools</h2>
-
+        <p className="skills__description">A collection of tools and technologies I’ve worked with over 12+ years of frontend development</p>
         <div className="skills__list">
           {skills.map((skill) => (
             <span key={skill} className="skills__item">
