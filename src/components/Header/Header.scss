@@ -1,91 +1,82 @@
 .header {
-  padding: 1rem 2rem;
-  background: transparent;
-  color: inherit;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 2rem;
+  height: 60px;
+  background: rgba(11, 12, 16, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
 
-  &__row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  position: relative;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.header__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.header__link:hover {
+  color: var(--text);
+}
+
+.header__link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0 1.25rem;
   }
 
-  &__logo {
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
-
-  &__controls {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  .header__nav {
     gap: 1rem;
   }
 
-  &__actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1rem;
+  .header__link {
+    font-size: 0.8rem;
   }
 
-  &__link {
-    font-weight: 600;
-    position: relative;
-    transition: all 200ms ease-in-out;
-    text-wrap: nowrap;
-    color: white;
-    background: linear-gradient(90deg, #8e2de2, #fcd34d, #3b82f6) no-repeat
-      right bottom / 0 var(--bg-h);
-    transition: background-size 350ms;
-    padding-bottom: 2px;
-    --bg-h: 1px;
-
-    &:where(:hover) {
-      background-size: 100% var(--bg-h);
-      background-position-x: left;
-    }
-    @at-root .light-theme & {
-      background: linear-gradient(90deg, #8e2de2, #fcd34d, #3b82f6) no-repeat
-        right bottom / 0 var(--bg-h);
-
-      &:where(:hover) {
-        background-size: 100% var(--bg-h);
-        background-position-x: left;
-      }
-    }
-  }
-
-  &__button {
-    background: none;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition:
-      background 0.3s ease,
-      color 0.3s ease;
-
-    &--ghost:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
-  }
-  &__icon {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-    path {
-      fill: #fff;
-    }
-    &:hover {
-      transform: rotate(10deg) scale(1.05);
-    }
+  .header__link--hide-mobile {
+    display: none;
   }
 }

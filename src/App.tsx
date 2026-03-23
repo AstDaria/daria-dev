@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import TechStack from "./components/TechStack/TechStack";
@@ -9,17 +8,9 @@ import Focus from "./components/Focus/Focus";
 import Skills from "./components/Skills/Skills";
 
 export default function App() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-
-  const toggle = () => setTheme((t) => (t === "light" ? "dark" : "light"));
-
-  useEffect(() => {
-    document.body.setAttribute("data-theme", theme);
-  }, [theme]);
-
   return (
     <>
-      <Header theme={theme} onToggleTheme={toggle} />
+      <Header />
       <main>
         <Hero />
         <Skills />

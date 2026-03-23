@@ -1,3 +1,4 @@
+import NetworkGraph from "./NetworkGraph";
 import "./Hero.scss";
 
 export default function Hero() {
@@ -5,44 +6,32 @@ export default function Hero() {
     <section className="hero" aria-label="Intro">
       <div className="hero__inner">
         <div className="hero__content">
-          <p className="hero__eyebrow">
-            Frontend developer & design system enthusiast
-          </p>
+          <p className="hero__eyebrow">Frontend Developer · 12+ years</p>
 
           <h1 className="hero__title">
-            Hi, I’m Daria —{" "} <br />
-            <span className="gradient-text">Frontend Developer</span>
+            Hi, I’m Daria —{" "}<br />
+            <span className="gradient-text">I build interfaces that ship.</span>
           </h1>
 
-          <p className="hero__text">
-            I build clean, predictable interfaces and help teams ship UI with
-            confidence. From marketing pages to complex dashboards, I care about
-            structure, accessibility, and design systems that actually work.
+          <p className="hero__desc">
+            Clean code, design systems, and modern tooling —
+            from marketing pages to CI/CD dashboards.
           </p>
+
+          <div className="hero__chips">
+            <span className="hero__chip">Design systems</span>
+            <span className="hero__chip">Reusable UI</span>
+            <span className="hero__chip">AI tooling</span>
+            <span className="hero__chip">CI/CD</span>
+            <span className="hero__chip">Performance</span>
+            <span className="hero__chip">Accessibility</span>
+          </div>
         </div>
 
-        <div className="hero__visual" aria-hidden="true">
-          <div className="hero-visual">
-            <div className="hero-visual__badge">Currently at Codemagic</div>
-            <a href="https://codemagic.io/start/" target="_blank" rel="noopener noreferrer">
-              <img className="hero__image"src="/hero-cm.png" alt="" />
-            </a>
-            <div className="hero-visual__chips">
-              <span className="hero-visual__chip">Design systems</span>
-              <span className="hero-visual__chip">Reusable UI</span>
-              <span className="hero-visual__chip">Smooth DX</span>
-              <span className="hero-visual__chip">CI/CD</span>
-              <span className="hero-visual__chip">A/B testing</span>
-              <span className="hero-visual__chip">Performance</span>
-              <span className="hero-visual__chip">Accessibility</span>
-              <span className="hero-visual__chip">Scalability</span>
-          </div>
-           
-          </div>
-          <div className="star"></div>
-         
+        <div className="hero__graph" aria-hidden="true">
+          <NetworkGraph />
         </div>
-</div>
+      </div>
     </section>
   );
 }

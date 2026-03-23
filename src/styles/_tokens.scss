@@ -1,18 +1,11 @@
 :root {
-  --bg: #0b0c10;
-  --card: #12141b;
+  --bg: #0d0f1c;
+  --card: #13152a;
   --text: #e8e9ef;
   --muted: #9aa1b2;
-  --accent: #7c3aed;
-  --accent-2: #22c55e;
-  --border: #1f2330;
-}
-[data-theme="light"] {
-  --bg: #ffffff;
-  --card: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --accent: #6d28d9;
-  --accent-2: #16a34a;
-  --border: #e5e7eb;
+  --accent-purple: #a78bfa;
+  --accent-blue: #60a5fa;
+  --accent-green: #34d399;
+  --accent: var(--accent-purple);
+  --border: #1e2136;
 }

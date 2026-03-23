@@ -1,52 +1,153 @@
 .projects {
-  padding: 60px 20px;
+  padding: 120px 0;
+}
+
+.projects__inner {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+}
+
+.projects__title {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
   text-align: center;
+  margin-bottom: 10px;
+}
 
-  &__content {
-    max-width: 720px;
-    margin: 0 auto;
+.projects__desc {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 52px;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* stagger scroll entrance */
+.projects__grid li {
+  opacity: 0;
+  animation: project-in 0.4s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+
+.projects__card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 18px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+/* shimmer sweep — transition only on :hover so it doesn't slide back */
+.projects__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+}
+
+.projects__card:hover::before {
+  left: 160%;
+  transition: left 0.5s ease;
+}
+
+/* purple */
+.projects__grid li:nth-child(4n+1) .projects__card:hover {
+  border-color: rgba(124, 58, 237, 0.6);
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.18);
+}
+
+/* blue */
+.projects__grid li:nth-child(4n+2) .projects__card:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.18);
+}
+
+/* teal */
+.projects__grid li:nth-child(4n+3) .projects__card:hover {
+  border-color: rgba(20, 184, 166, 0.6);
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(20, 184, 166, 0.18);
+}
+
+/* violet */
+.projects__grid li:nth-child(4n+4) .projects__card:hover {
+  border-color: rgba(167, 139, 250, 0.6);
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(167, 139, 250, 0.18);
+}
+
+.projects__card-title {
+  line-height: 1.3;
+}
+
+.projects__card-arrow {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  opacity: 0.4;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.projects__card:hover .projects__card-arrow {
+  transform: translate(2px, -2px);
+  opacity: 1;
+}
+
+@keyframes project-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-
-  &__title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  &__text {
-    margin-bottom: 1.5rem;
-    color: var(--text-secondary);
+@media (max-width: 900px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    padding: 0;
-    list-style: none;
-  }
-
-  &__button {
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 10px;
-    background: var(--card);
-    color: var(--text-color);
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-      color: #fff;
-      background: linear-gradient(135deg, #646cff, #3a0ca3, #ffb800);
-      box-shadow: 0 0 20px rgba(100, 108, 255, 0.4);
-      transform: translateY(-2px);
-    }
-
-    &:active {
-      transform: translateY(0);
-    }
+@media (max-width: 500px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
   }
 }
