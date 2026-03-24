@@ -45,13 +45,13 @@ const groups = [
   },
   {
     label: "Marketing & CMS",
-    items: ["HubSpot", "ActiveCampaign", "Plausible", "WordPress", "Figma"],
+    items: ["HubSpot", "ActiveCampaign", "Plausible", "Strapi", "Figma"],
   },
 ];
 
 export default function Skills() {
   return (
-    <section className="skills" aria-label="Skills">
+    <section className="skills" id="skills" aria-label="Skills">
       <div className="skills__inner">
         <h2 className="skills__title">Skills & Tools</h2>
         <p className="skills__desc">

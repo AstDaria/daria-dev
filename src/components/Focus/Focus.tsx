@@ -51,7 +51,7 @@ const Focus = () => {
   }, []);
 
   return (
-    <section className="focus" id="achivements">
+    <section className="focus" id="impact">
       <div className="focus__inner">
         <div className="focus__title-wrap">
           <h2 className="focus__title">Impact & results</h2>
