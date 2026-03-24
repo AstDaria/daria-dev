@@ -28,6 +28,9 @@
   letter-spacing: -0.01em;
   white-space: nowrap;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .header__nav {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Logo from "./Logo";
 import "./Header.scss";
 
 export default function Header() {
@@ -9,16 +10,27 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__inner">
-        <a className="header__logo" href="#">
+        <a className="header__logo" href="/">
+          <Logo />
           Daria Astafeva
         </a>
 
         <nav className="header__nav header__nav--desktop">
-          <a className="header__link" href="#skills">Skills</a>
-          <a className="header__link" href="#impact">Impact</a>
-          <a className="header__link" href="#stack">Expertise</a>
-          <a className="header__link" href="#projects">Projects</a>
-          <a className="header__link" href="#contact">Contact</a>
+          <a className="header__link" href="#skills">
+            Skills
+          </a>
+          <a className="header__link" href="#impact">
+            Impact
+          </a>
+          <a className="header__link" href="#stack">
+            Expertise
+          </a>
+          <a className="header__link" href="#projects">
+            Projects
+          </a>
+          <a className="header__link" href="#contact">
+            Contact
+          </a>
         </nav>
 
         <button
@@ -36,11 +48,21 @@ export default function Header() {
       <div
         className={`header__mobile-menu${open ? " header__mobile-menu--open" : ""}`}
       >
-        <a className="header__mobile-link" href="#skills" onClick={close}>Skills</a>
-        <a className="header__mobile-link" href="#impact" onClick={close}>Impact</a>
-        <a className="header__mobile-link" href="#stack" onClick={close}>Expertise</a>
-        <a className="header__mobile-link" href="#projects" onClick={close}>Projects</a>
-        <a className="header__mobile-link" href="#contact" onClick={close}>Contact</a>
+        <a className="header__mobile-link" href="#skills" onClick={close}>
+          Skills
+        </a>
+        <a className="header__mobile-link" href="#impact" onClick={close}>
+          Impact
+        </a>
+        <a className="header__mobile-link" href="#stack" onClick={close}>
+          Expertise
+        </a>
+        <a className="header__mobile-link" href="#projects" onClick={close}>
+          Projects
+        </a>
+        <a className="header__mobile-link" href="#contact" onClick={close}>
+          Contact
+        </a>
       </div>
     </header>
   );
