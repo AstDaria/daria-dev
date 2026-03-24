@@ -27,6 +27,7 @@
   color: var(--text);
   letter-spacing: -0.01em;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .header__nav {
@@ -63,20 +64,106 @@
   width: 100%;
 }
 
-@media (max-width: 600px) {
+/* Burger button */
+.header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.header__burger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transform-origin: center;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    width 0.3s ease;
+}
+
+/* Animate to X */
+.header__burger--open .header__burger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__burger--open .header__burger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.header__burger--open .header__burger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile dropdown menu */
+.header__mobile-menu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: rgba(11, 12, 16, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.header__mobile-menu--open {
+  max-height: 240px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header__mobile-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 16px 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+.header__mobile-link:last-child {
+  border-bottom: none;
+}
+
+.header__mobile-link:hover {
+  color: var(--text);
+  background: rgba(124, 58, 237, 0.07);
+}
+
+@media (max-width: 768px) {
   .header {
     padding: 0 1.25rem;
   }
 
-  .header__nav {
-    gap: 1rem;
-  }
-
-  .header__link {
-    font-size: 0.8rem;
-  }
-
-  .header__link--hide-mobile {
+  .header__nav--desktop {
     display: none;
+  }
+
+  .header__burger {
+    display: flex;
   }
 }

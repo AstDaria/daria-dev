@@ -15,7 +15,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, transparent 30%, var(--bg) 80%);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    transparent 30%,
+    var(--bg) 80%
+  );
   pointer-events: none;
 }
 
@@ -49,11 +53,13 @@
 }
 
 .techstack__card {
-  background: var(--card);
+  background: rgba(19, 21, 42, 0.5);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 32px 28px;
-  transition: border-color 0.2s, transform 0.2s;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
 }
 
 .techstack__card:hover {

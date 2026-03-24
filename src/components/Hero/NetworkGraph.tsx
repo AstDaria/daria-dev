@@ -12,23 +12,22 @@ interface Node {
 }
 
 const LABELED_NODES: { label: string; color: string; glow: string }[] = [
-  { label: "TypeScript",    color: "#a78bfa", glow: "#a78bfa" },
-  { label: "React",         color: "#e2e8f0", glow: "rgba(226,232,240,0.4)" },
+  { label: "TypeScript", color: "#a78bfa", glow: "#a78bfa" },
+  { label: "React", color: "#e2e8f0", glow: "rgba(226,232,240,0.4)" },
   { label: "Design System", color: "#e2e8f0", glow: "rgba(226,232,240,0.4)" },
-  { label: "CI/CD",         color: "#60a5fa", glow: "#60a5fa" },
-  { label: "Storybook",     color: "#a78bfa", glow: "#a78bfa" },
-  { label: "Performance",   color: "#e2e8f0", glow: "rgba(226,232,240,0.4)" },
+  { label: "CI/CD", color: "#60a5fa", glow: "#60a5fa" },
+  { label: "Storybook", color: "#a78bfa", glow: "#a78bfa" },
+  { label: "Performance", color: "#e2e8f0", glow: "rgba(226,232,240,0.4)" },
   { label: "Accessibility", color: "#e2e8f0", glow: "rgba(226,232,240,0.4)" },
-  { label: "Figma",         color: "#34d399", glow: "#34d399" },
-  { label: "Claude Code",   color: "#60a5fa", glow: "#60a5fa" },
-  { label: "AWS",           color: "#34d399", glow: "#34d399" },
+  { label: "Figma", color: "#34d399", glow: "#34d399" },
+  { label: "Claude Code", color: "#60a5fa", glow: "#60a5fa" },
+  { label: "AWS", color: "#34d399", glow: "#34d399" },
 ];
 
 export default function NetworkGraph() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>();
   const nodesRef = useRef<Node[]>([]);
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -129,7 +128,7 @@ export default function NetworkGraph() {
         ctx.fill();
         ctx.shadowBlur = 0;
 
-        if (node.label) {
+        if (node.label && window.innerWidth >= 768) {
           ctx.font = "12px Inter, ui-sans-serif, system-ui";
           ctx.fillStyle = "rgba(226, 232, 240, 0.8)";
           ctx.fillText(node.label, node.x + node.radius + 6, node.y + 4);
@@ -141,7 +140,9 @@ export default function NetworkGraph() {
 
     draw();
 
-    const ro = new ResizeObserver(() => { resize(); });
+    const ro = new ResizeObserver(() => {
+      resize();
+    });
     ro.observe(canvas);
 
     return () => {

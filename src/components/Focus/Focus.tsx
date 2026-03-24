@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import TitleSparkles from "../ui/TitleSparkles";
 import "./Focus.scss";
 
 const achievements = [
@@ -52,7 +53,12 @@ const Focus = () => {
   return (
     <section className="focus" id="achivements">
       <div className="focus__inner">
-        <h2 className="focus__title">Impact & results</h2>
+        <div className="focus__title-wrap">
+          <h2 className="focus__title">Impact & results</h2>
+          <div className="focus__sparkles">
+            <TitleSparkles />
+          </div>
+        </div>
         <div className="focus__list">
           {achievements.map((a) => (
             <div key={a.title} className="focus__item">

@@ -9,13 +9,13 @@ export default function Hero() {
           <p className="hero__eyebrow">Frontend Developer · 12+ years</p>
 
           <h1 className="hero__title">
-            Hi, I’m Daria —{" "}<br />
+            Hi, I’m Daria — <br />
             <span className="gradient-text">I build interfaces that ship.</span>
           </h1>
 
           <p className="hero__desc">
-            Clean code, design systems, and modern tooling —
-            from marketing pages to CI/CD dashboards.
+            Clean code, design systems, and modern tooling — from marketing
+            pages to CI/CD dashboards.
           </p>
 
           <div className="hero__chips">

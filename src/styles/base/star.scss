@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
- animation:
+  animation:
     star-motion 3.4s ease-in-out infinite,
     star-glow 2.6s ease-in-out infinite;
 }
@@ -37,8 +37,13 @@
 }
 
 @keyframes star-glow {
-  0%, 100% { opacity: 0.75; }
-  50%      { opacity: 1;    }
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes star-motion {

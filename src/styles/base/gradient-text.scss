@@ -1,5 +1,10 @@
 .gradient-text {
-  background-image: linear-gradient(95deg, var(--accent-purple), var(--accent-blue), var(--accent-green));
+  background-image: linear-gradient(
+    95deg,
+    var(--accent-purple),
+    var(--accent-blue),
+    var(--accent-green)
+  );
   pointer-events: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -16,6 +21,10 @@
 }
 
 @keyframes gradient-text-shine {
-  from { background-position: 0% 50%; }
-  to   { background-position: 100% 50%; }
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
 }

@@ -57,7 +57,9 @@
   background: rgba(124, 58, 237, 0.08);
   color: var(--muted);
   border: 1px solid rgba(124, 58, 237, 0.2);
-  transition: border-color 0.2s, color 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .hero__chip:hover {
@@ -87,8 +89,12 @@
 }
 
 @keyframes hero-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes hero-slide-up {
@@ -102,34 +108,52 @@
   }
 }
 
+@keyframes hero-graph-bg-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
 @media (max-width: 900px) {
   .hero {
     padding: 110px 0 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 140px 0 80px;
   }
 
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 0;
+    position: relative;
   }
 
   .hero__graph {
-    height: 320px;
-    margin-top: 0;
-    margin-bottom: -40px;
+    position: absolute;
+    inset: -100px 0 -80px;
+    height: auto;
+    margin: 0;
+    animation: hero-graph-bg-fade 0.7s ease-out 0.2s both;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
   }
 }
 
 @media (max-width: 600px) {
   .hero {
-    padding: 90px 0 60px;
+    padding: 140px 0 60px;
   }
 
   .hero__title {
     font-size: clamp(2rem, 8vw, 2.6rem);
-  }
-
-  .hero__graph {
-    height: 240px;
-    margin-bottom: -20px;
   }
 }

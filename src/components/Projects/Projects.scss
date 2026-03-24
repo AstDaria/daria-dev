@@ -48,14 +48,18 @@
   justify-content: space-between;
   gap: 8px;
   padding: 18px 20px;
-  background: var(--card);
+  background: rgba(19, 21, 42, 0.5);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  transition: border-color 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
+  transition:
+    border-color 0.25s,
+    color 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 
 /* shimmer sweep — transition only on :hover so it doesn't slide back */
@@ -81,7 +85,7 @@
 }
 
 /* purple */
-.projects__grid li:nth-child(4n+1) .projects__card:hover {
+.projects__grid li:nth-child(4n + 1) .projects__card:hover {
   border-color: rgba(124, 58, 237, 0.6);
   color: var(--text);
   transform: translateY(-2px);
@@ -89,7 +93,7 @@
 }
 
 /* blue */
-.projects__grid li:nth-child(4n+2) .projects__card:hover {
+.projects__grid li:nth-child(4n + 2) .projects__card:hover {
   border-color: rgba(59, 130, 246, 0.6);
   color: var(--text);
   transform: translateY(-2px);
@@ -97,7 +101,7 @@
 }
 
 /* teal */
-.projects__grid li:nth-child(4n+3) .projects__card:hover {
+.projects__grid li:nth-child(4n + 3) .projects__card:hover {
   border-color: rgba(20, 184, 166, 0.6);
   color: var(--text);
   transform: translateY(-2px);
@@ -105,7 +109,7 @@
 }
 
 /* violet */
-.projects__grid li:nth-child(4n+4) .projects__card:hover {
+.projects__grid li:nth-child(4n + 4) .projects__card:hover {
   border-color: rgba(167, 139, 250, 0.6);
   color: var(--text);
   transform: translateY(-2px);
@@ -121,7 +125,9 @@
   width: 16px;
   height: 16px;
   opacity: 0.4;
-  transition: transform 0.2s, opacity 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 
 .projects__card:hover .projects__card-arrow {
